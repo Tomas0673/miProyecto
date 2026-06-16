@@ -1,0 +1,31 @@
+#carouselExampleCaptions {
+    box-shadow:
+        0 10px 30px rgba(100, 116, 139, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+#menu {
+    padding: 9%;
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    justify-content: center;
+
+    .card {
+        margin: 4%;
+        width: 25%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.btn-color{
+    background-color: #2593f9;
+}
+
+main {
+    background-color: #F8F9FA;
+}
+

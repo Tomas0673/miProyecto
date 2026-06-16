@@ -1,0 +1,19 @@
+<main>
+  <div id="filter-container">
+    
+  </div>
+  <div class="productos">
+    @for(p of Productos; track p.id){
+    @if(p.disponibilidad){
+    <div class="card">
+      <img src="{{p.imagen}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{p.nombre}}</h5>
+        <p class="card-text">{{p.descripcion}}</p>
+        <p>${{p.precio}}</p>
+        <a href="#" class="btn btn-color">Agregar Carrito</a>
+      </div>
+    </div>
+    }}
+  </div>
+</main>

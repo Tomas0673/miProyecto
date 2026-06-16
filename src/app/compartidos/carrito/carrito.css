@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap');
+
+:root {
+  --vb-blue: #185FA5;
+  --vb-blue-light: #E6F1FB;
+  --vb-blue-mid: #378ADD;
+  --vb-yellow: #EF9F27;
+  --vb-yellow-light: #FAEEDA;
+  --vb-yellow-dark: #854F0B;
+}
+
+.cart-wrapper {
+  font-family: 'Barlow', sans-serif;
+  padding: 1.5rem 0;
+  margin-top: 5%;
+}
+
+.cart-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #185FA5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.cart-title i {
+  font-size: 22px;
+  color: var(--vb-yellow);
+}
+
+/* Tabla */
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 0.5px solid #B5D4F4;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.table thead tr {
+  background-color: #185FA5;
+}
+
+.table thead th {
+  color: #185FA5;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  padding: 12px 16px;
+}
+
+.table tbody tr {
+  border-bottom: 0.5px solid #B5D4F4;
+  transition: background 0.15s;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: var(--vb-blue-light);
+}
+
+.table tbody td,
+.table tbody th {
+  padding: 13px 16px;
+  vertical-align: middle;
+  border: none;
+}
+
+/* Celda de producto */
+.product-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--vb-blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.product-icon i {
+  font-size: 18px;
+  color: var(--vb-blue);
+}
+
+.product-icon--yellow {
+  background: var(--vb-yellow-light);
+}
+
+.product-icon--yellow i {
+  color: var(--vb-yellow-dark);
+}
+
+.product-name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.product-cat {
+  font-size: 12px;
+  color: #888;
+}
+
+/*Control Cantidad*/
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qty-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 0.5px solid #B5D4F4;
+  background: white;
+  color: var(--vb-blue);
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.1s;
+  padding: 0;
+}
+
+.qty-btn:hover {
+  background: var(--vb-blue-light);
+}
+
+.qty-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Precios */
+.price-cell {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--vb-blue);
+}
+
+/* Botón eliminar */
+.btn-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+  display: flex;
+  align-items: center;
+}
+
+.btn-remove:hover {
+  color: #A32D2D;
+  background: #FCEBEB;
+}
+
+.btn-remove i {
+  font-size: 17px;
+}
+
+/* Footer del carrito */
+.cart-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--vb-blue-light);
+  border-radius: 12px;
+  border: 0.5px solid #B5D4F4;
+}
+
+.total-label {
+  font-size: 13px;
+  color: #5F5E5A;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.total-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--vb-blue);
+}
+
+.btn-checkout {
+  background: var(--vb-yellow);
+  color: var(--vb-yellow-dark);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-checkout:hover {
+  background: #FAC775;
+}
+
+.btn-checkout:active {
+  transform: scale(0.97);
+}

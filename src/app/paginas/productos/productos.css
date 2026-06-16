@@ -1,0 +1,15 @@
+.card{
+    margin: 4%;
+    width: 25%;  
+    img{
+        width: 100%;
+    }
+}
+
+.productos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
