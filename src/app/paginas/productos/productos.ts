@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Producto } from '../../models/productoPlantilla';
-import { ProductosService } from '../../servicios/productos.service';
 import { CarritoService } from '../../servicios/carrito.service';
 
 @Component({
@@ -79,8 +78,8 @@ export class Productos {
     },
   ];
 
-  // Llama al servicio para agregar
-  agregarFavorito(p: Producto) {
+  // Llama al servicio para agregar el producto al carrito
+  agregarCarrito(p: Producto) {
     this.carritoService.agregarPoducto(p);
   }
 

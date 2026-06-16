@@ -17,13 +17,13 @@ export class CarritoComponent {
     this.productosCarrito =
       this.carritoService.obtenerProducto();
   }
-  aumentar(id: number) {
+  aumentar(id: number|string) {
     this.carritoService.aumentarCantidad(id);
   }
-  disminuir(id: number) {
+  disminuir(id: number|string) {
     this.carritoService.disminuirCantidad(id);
   }
-  eliminar(id: number) {
+  eliminar(id: number|string) {
     this.carritoService.eliminarProducto(id);
     this.productosCarrito =
       this.carritoService.obtenerProducto();

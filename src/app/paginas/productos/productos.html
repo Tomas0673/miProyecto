@@ -11,7 +11,7 @@
         <h5 class="card-title">{{p.nombre}}</h5>
         <p class="card-text">{{p.descripcion}}</p>
         <p>${{p.precio}}</p>
-        <a href="#" class="btn btn-color">Agregar Carrito</a>
+        <a (click)="agregarCarrito(p)" class="btn btn-color">Agregar Carrito</a>
       </div>
     </div>
     }}

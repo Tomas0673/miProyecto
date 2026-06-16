@@ -18,7 +18,7 @@ export class CarritoService {
     return this.carrito;
   }
 
-  aumentarCantidad(id: number) {
+  aumentarCantidad(id: number|string) {
     const producto =
       this.carrito
         .find(p => p.id === id);
@@ -27,7 +27,7 @@ export class CarritoService {
     }
   }
 
-  disminuirCantidad(id: number) {
+  disminuirCantidad(id: number|string) {
     const producto =
       this.carrito
         .find(l => l.id === id);
@@ -36,7 +36,7 @@ export class CarritoService {
     }
   }
 
-  eliminarProducto(id: number) {
+  eliminarProducto(id: number|string) {
     this.carrito =
       this.carrito
         .filter(p => p.id !== id);
