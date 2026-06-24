@@ -33,13 +33,13 @@
         </td>
         <td>
           <div class="qty-control">
-            <button class="qty-btn" (click)="disminuir(p.id)" aria-label="Reducir cantidad">−</button>
+            <button class="qty-btn" (click)="cantidad(p,false)" aria-label="Reducir cantidad">−</button>
             <span class="qty-num">{{p.cantidad}}</span>
-            <button class="qty-btn" (click)="aumentar(p.id)" aria-label="Aumentar cantidad">+</button>
+            <button class="qty-btn" (click)="cantidad(p,true)" aria-label="Aumentar cantidad">+</button>
           </div>
         </td>
         <td class="price-cell">${{p.precio}}</td>
-        <td class="price-cell">$</td>
+        <td class="price-cell">${{p.subtotal}}</td>
         <td>
           <button class="btn-remove" (click)="eliminar(p.id)" aria-label="Eliminar producto">
             Eliminar
@@ -53,7 +53,7 @@
   <div class="cart-footer">
     <div>
       <div class="total-label">Total</div>
-      <div class="total-price">$47.100</div>
+      <div class="total-price">${{totalPago()}}</div>
     </div>
     <button class="btn-checkout">
       <i class="ti ti-credit-card" aria-hidden="true"></i>

@@ -1,1 +1,39 @@
-<p>favoritos works!</p>
+
+html<main class="favoritos-wrapper">
+
+  <!-- Encabezado -->
+  <div class="favoritos-header">
+    <h2 class="favoritos-titulo">
+      <span class="titulo-icono">♥</span>
+      Mis favoritos
+      <span class="favoritos-count">{{ favoritos.length }} productos</span>
+    </h2>
+    <button class="btn-limpiar" (click)="limpiarFavoritos()">
+      🗑 Limpiar todo
+    </button>
+  </div>
+
+  <!-- Grid de favoritos -->
+  @if (favoritos.length > 0) {
+    <div class="favoritos-grid">
+      @for (p of favoritos; track p.id) {
+        <div class="card">
+          <img src="{{ p.imagen }}" class="card-img-top" alt="{{ p.nombre }}">
+          <button class="btn-fav" type="button" (click)="quitarFavorito(p)" title="Quitar de favoritos">❤️</button>
+          <div class="card-body">
+            <span class="card-categoria">{{ p.categoria }}</span>
+            <h5 class="card-title">{{ p.nombre }}</h5>
+            <p class="card-precio">${{ p.precio }}</p>
+            <button class="btn-carrito" (click)="agregarCarrito(p)">
+              Agregar al carrito
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  <!-- Estado vacío -->
+  
+
+</main>

@@ -2,28 +2,31 @@
 
 <nav class="navbar navbar-expand-md fixed-top fondoPiola">
   <div class="container-fluid">
-    <a class="navbar-brand text-light" href="#">Voley Strap</a>
+    <a class="navbar-brand text-light" href="#" routerLinkActive='active'>Voley Strap</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="/inicio">Home</a>
+          <a class="nav-link active text-light" aria-current="page"  routerLink="/inicio" routerLinkActive='active'>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/productos">Productos</a>
+          <a class="nav-link text-light"  routerLink="/productos" routerLinkActive='active'>Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/ofertas">Ofertas</a>
+          <a class="nav-link text-light"  routerLink="/favoritos" routerLinkActive='active'>Favoritos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/contacto">Contacto</a>
+          <a class="nav-link text-light"  routerLink="/ofertas" routerLinkActive='active' >Ofertas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light"  routerLink="/contacto" routerLinkActive='active'>Contacto</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <button id="btnInicio" class="btn btn-outline-light me-3 bi bi-cart" routerLink="/carrito" type="button"></button>
-        <button id="btnInicio" class="btn btn-outline-light me-3 bi bi-person" routerLink="/inicioSesion" type="button"></button>
+        <button id="btnInicio" class="btn btn-outline-light me-3 bi bi-cart" routerLink="/carrito" routerLinkActive='active' type="button"></button>
+        <button id="btnInicio" class="btn btn-outline-light me-3 bi bi-person" routerLink="/inicioSesion" routerLinkActive='active' type="button"></button>
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-light" type="submit">Search</button>
       </form>

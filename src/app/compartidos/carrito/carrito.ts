@@ -9,22 +9,36 @@ import { Producto } from '../../models/productoPlantilla';
   styleUrl: './carrito.css',
 })
 export class CarritoComponent {
+
   productosCarrito: Producto[] = [];
-  constructor(
-    private carritoService: CarritoService
-  ) { }
+
+  constructor(private carritoService: CarritoService) {}
+
   ngOnInit() {
     this.productosCarrito =
       this.carritoService.obtenerProducto();
   }
-  aumentar(id: number|string) {
-    this.carritoService.aumentarCantidad(id);
+
+  cantidad(producto:Producto, accion:boolean){
+    this.carritoService.cantidad(producto,accion);
   }
-  disminuir(id: number|string) {
-    this.carritoService.disminuirCantidad(id);
-  }
+  
   eliminar(id: number|string) {
     this.carritoService.eliminarProducto(id);
+    this.productosCarrito =
+      this.carritoService.obtenerProducto();
+  }
+
+  subTotal(id: number|string){
+    this.carritoService.subTotal(id);
+  }
+
+  totalPago(){
+    return this.carritoService.totalPago();
+  }
+  
+  vaciarCarrito(){
+    this.carritoService.vaciarCarrito();
     this.productosCarrito =
       this.carritoService.obtenerProducto();
   }

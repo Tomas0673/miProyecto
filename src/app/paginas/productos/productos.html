@@ -1,19 +1,36 @@
 <main>
+
+  <!-- Filtro de categorías -->
   <div id="filter-container">
-    
-  </div>
+    <h1>Productos</h1>
+  <select [(ngModel)]="categoriaActiva" class="filtro-select">
+    <option value="Todos">Todas las categorías</option>
+    <option value="Pelotas">🏐 Pelotas</option>
+    <option value="Calzado">👟 Calzado</option>
+    <option value="Ropa">👕 Ropa</option>
+    <option value="Proteccion">🛡️ Protección</option>
+  </select>
+</div>
+
+  <!-- Grid de productos -->
   <div class="productos">
-    @for(p of Productos; track p.id){
-    @if(p.disponibilidad){
-    <div class="card">
-      <img src="{{p.imagen}}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{p.nombre}}</h5>
-        <p class="card-text">{{p.descripcion}}</p>
-        <p>${{p.precio}}</p>
-        <a (click)="agregarCarrito(p)" class="btn btn-color">Agregar Carrito</a>
-      </div>
-    </div>
-    }}
+    @for (p of Productos; track p.id) {
+      @if (p.disponibilidad && (categoriaActiva === 'Todos' || p.categoria === categoriaActiva)) {
+        <div class="card">
+          <img src="{{ p.imagen }}" class="card-img-top" alt="{{ p.nombre }}">
+          <div class="card-body">
+            <span class="card-categoria">{{ p.categoria }}</span>
+            <h5 class="card-title">{{ p.nombre }}</h5>
+            <p class="card-text">{{ p.descripcion }}</p>
+            <p class="card-precio">${{ p.precio }}</p>
+            <div class="agregarCarrito gap-2 d-flex justify-content-center">
+              <a (click)="agregarCarrito(p)" class="btn btn-primary">Agregar al carrito</a>
+              <a (click)="agregarFavoritos(p)" class="btn border">❤</a>
+            </div>
+          </div>
+        </div>
+      }
+    }
   </div>
+
 </main>

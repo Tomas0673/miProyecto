@@ -10,30 +10,32 @@ export class CarritoService {
   carrito: Producto[] = [];
 
 
-  agregarPoducto(p: Producto) {
-    this.carrito.push(p);
+  agregarPoducto(producto: Producto) {
+    const productoExistente = this.carrito.find(p => p.id === producto.id);
+    if (productoExistente) {
+      productoExistente.cantidad ++;
+    } else {
+      producto.cantidad = 1;
+      this.carrito.push(producto);
+    }
+    this.subTotal(producto.id);
   }
 
   obtenerProducto() {
     return this.carrito;
   }
 
-  aumentarCantidad(id: number|string) {
-    const producto =
-      this.carrito
-        .find(p => p.id === id);
-    if (producto) {
-      producto.cantidad++;
-    }
-  }
-
-  disminuirCantidad(id: number|string) {
-    const producto =
-      this.carrito
-        .find(l => l.id === id);
-    if (producto && producto.cantidad > 1) {
-      producto.cantidad--;
-    }
+  cantidad(producto:Producto, accion:boolean){
+    const index = this.carrito.findIndex(p => p.id === producto.id);
+      if (accion) {
+        this.carrito[index].cantidad++;
+      } else {
+        this.carrito[index].cantidad--;
+        if (this.carrito[index].cantidad <= 0) {
+          this.carrito.splice(index, 1);
+        }
+      }
+      this.subTotal(producto.id);
   }
 
   eliminarProducto(id: number|string) {
@@ -46,6 +48,17 @@ export class CarritoService {
     this.carrito = this.carrito.filter(p => p.id = 0);
   }
 
+  subTotal(id: number|string){
+    const producto = this.carrito.find(p => p.id === id);
+    if (producto) {
+      producto.subtotal = producto.precio * producto.cantidad;
+      this.totalPago();
+    }
+  }
+
+  totalPago(){
+    return this.carrito.reduce((total, producto) => total + producto.subtotal, 0);
+  }
 }
 
 
