@@ -59,6 +59,11 @@ export class CarritoService {
   totalPago(){
     return this.carrito.reduce((total, producto) => total + producto.subtotal, 0);
   }
+
+  finalizarCompra(){
+    return alert('Compra finalizada con éxito, su monto fue de ')
+  }
+
 }
 
 

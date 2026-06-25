@@ -43,4 +43,8 @@ export class CarritoComponent {
       this.carritoService.obtenerProducto();
   }
 
+  finalizarCompra(){
+    return this.carritoService.finalizarCompra();
+  }
+
 }

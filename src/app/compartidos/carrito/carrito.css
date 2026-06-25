@@ -31,6 +31,37 @@
   color: var(--vb-yellow);
 }
 
+.cart-count {
+  font-size: 12px;
+  font-weight: 500;
+  background: #f5f5f3;
+  color: #5f5e5a;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.btn-limpiar {
+  background: none;
+  border: 1.5px solid #B5D4F4;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-limpiar:hover {
+  border-color: #A32D2D;
+  color: #A32D2D;
+  background: #FCEBEB;
+} 
+
 /* Tabla */
 .table {
   border-collapse: separate;
@@ -235,4 +266,79 @@
 
 .btn-checkout:active {
   transform: scale(0.97);
+}
+
+/* =====================
+   Estado vacío
+   ===================== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border: 0.5px solid  rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: #f5f5f3;
+  gap: 0.75rem;
+}
+
+.empty-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 0.5px solid  rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.empty-icon-wrap i {
+  font-size: 28px;
+  color: #8f8e8a;
+}
+
+.empty-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a18;
+}
+
+.empty-desc {
+  font-size: 14px;
+  color: #5f5e5a;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+/* =====================
+   Botón ir al catálogo
+   ===================== */
+.btn-catalog {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.5rem;
+  padding: 9px 20px;
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a18;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-catalog:hover {
+  background: #ebebea;
+  border-color:  rgba(0, 0, 0, 0.2);
+}
+
+.btn-catalog i {
+  font-size: 16px;
 }

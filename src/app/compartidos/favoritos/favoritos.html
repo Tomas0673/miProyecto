@@ -1,5 +1,7 @@
 
-html<main class="favoritos-wrapper">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+<main class="favoritos-wrapper">
 
   <!-- Encabezado -->
   <div class="favoritos-header">
@@ -34,6 +36,21 @@ html<main class="favoritos-wrapper">
   }
 
   <!-- Estado vacío -->
-  
+  @if(favoritos.length === 0){
+    <div class="empty-state">
+      <div class="empty-icon-wrap">
+        <i class="ti ti-heart-off" aria-hidden="true"></i>
+      </div>
+      <p class="empty-title">Aún no tenés favoritos</p>
+      <p class="empty-desc">
+        Guardá los productos que más te gustan para encontrarlos rápido cuando los necesites.
+      </p>
+      <a href="/productos" class="btn-catalog">
+        <i class="ti ti-layout-grid" aria-hidden="true"></i>
+        Ver catálogo
+        <i class="ti ti-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  }
 
 </main>

@@ -1,11 +1,19 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+
 <div class="cart-wrapper">
 
   <div class="cart-title">
     <i class="ti ti-shopping-cart" aria-hidden="true"></i>
     Carrito de compras
+    <span class="cart-count">{{productosCarrito.length}} productos</span>
+    <button class="btn-limpiar" (click)="vaciarCarrito()">
+      🗑 Limpiar todo
+    </button>
   </div>
   
-  @if(productosCarrito.length > 0){<table class="table">
+  @if(productosCarrito.length > 0){
+    <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -55,11 +63,28 @@
       <div class="total-label">Total</div>
       <div class="total-price">${{totalPago()}}</div>
     </div>
-    <button class="btn-checkout">
+    <button class="btn-checkout" (click)="finalizarCompra()">
       <i class="ti ti-credit-card" aria-hidden="true"></i>
       Finalizar compra
     </button>
   </div>
+  }
+
+  @if(productosCarrito.length === 0){
+    <div class="empty-state">
+      <div class="empty-icon-wrap">
+        <i class="ti ti-shopping-cart-off" aria-hidden="true"></i>
+      </div>
+      <p class="empty-title">Tu carrito está vacío</p>
+      <p class="empty-desc">
+        Todavía no agregaste ningún producto. Explorá el catálogo y encontrá algo que te guste.
+      </p>
+      <a href="/productos" class="btn-catalog">
+        <i class="ti ti-layout-grid" aria-hidden="true"></i>
+        Ver catálogo
+        <i class="ti ti-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
   }
 
 

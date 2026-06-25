@@ -23,18 +23,48 @@
 #menu {
     padding: 9%;
     display: flex;
-    gap: 10%;
+    gap: 7%;
     align-items: center;
     justify-content: center;
-
+    
+   
     .card {
-        margin: 4%;
-        width: 25%;
+        align-items: center;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: box-shadow 0.2s, transform 0.2s;
 
         img {
+            border-radius: 20px;
             width: 100%;
+            object-fit: cover;
+        }
+
+        a {
+            position: absolute;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 10px;
+            width: 100px;
+            height: 32px;
+            color: rgb(0, 0, 0);
+            font-size: 500;
         }
     }
+}
+
+.card:hover{
+  box-shadow: 0 10px 30px rgba(100, 116, 139, 0.4);
+  transform: translateY(-3px);
+}
+
+.card:hover a{
+    background-color: #0890ff;
+    opacity: 80%;
 }
 
 .btn-color {

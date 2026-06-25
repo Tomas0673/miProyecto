@@ -1,1 +1,54 @@
-<p>contacto works!</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+<section class="contact-section">
+
+  <!-- Encabezado -->
+  <div class="contact-header">
+    <i class="ti ti-address-book" aria-hidden="true"></i>
+    <h2>Contacto</h2>
+  </div>
+
+  <div class="contact-grid">
+
+    <!-- Tarjetas de contacto -->
+    @for (item of contactos; track item.label) {
+      <div class="contact-card">
+        <div class="card-icon-wrap">
+          <i class="ti {{ item.icono }}" aria-hidden="true"></i>
+        </div>
+        <p class="card-label">{{ item.label }}</p>
+
+        @if (item.link) {
+          <a class="card-value card-link" [href]="item.link">{{ item.valor }}</a>
+        } @else {
+          <p class="card-value">{{ item.valor }}</p>
+        }
+
+        <p class="card-sub">{{ item.sub }}</p>
+      </div>
+    }
+
+    <!-- Tarjeta de horarios -->
+    <div class="contact-card horario-card">
+      <div class="horario-header">
+        <div class="card-icon-wrap">
+          <i class="ti ti-clock" aria-hidden="true"></i>
+        </div>
+        <p class="card-label">Horario de atención</p>
+      </div>
+
+      <div class="horario-rows">
+        @for (horario of horarios; track horario.dia) {
+          <div class="horario-row">
+            <span class="horario-dia">{{ horario.dia }}</span>
+            <span class="horario-tiempo" [class.cerrado]="horario.cerrado">
+              {{ horario.tiempo }}
+            </span>
+          </div>
+        }
+      </div>
+    </div>
+
+  </div>
+
+</section>
